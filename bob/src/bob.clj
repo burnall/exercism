@@ -1,10 +1,11 @@
-(ns bob)
+(ns bob
+  (:require [clojure.string :refer [upper-case blank? ends-with?]]))
 
 (defn response-for [phrase]
   (cond 
-    (= (clojure.string/trim phrase) "") "Fine. Be that way!"
-    (and (= (clojure.string/upper-case phrase) phrase) 
+    (blank? phrase) "Fine. Be that way!"
+    (and (= (upper-case phrase) phrase) 
              (re-find #"[A-Z]" phrase)) "Whoa, chill out!"
-    (= (last phrase) \?) "Sure."
+    (ends-with? phrase "?") "Sure."
     :else "Whatever."))
 
