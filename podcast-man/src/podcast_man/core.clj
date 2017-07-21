@@ -11,6 +11,7 @@
       (clojure.java.io/file)
       (file-seq)
       (drop 1)
+      (sort)
       (map #(.getName %))))
 
 (defn get-pattern-index [patterns] 
