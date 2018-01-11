@@ -1,7 +1,8 @@
-^6[23].*
+^6[3-6].*
 ^3[.][0-9].*
 ^atp.*
 ^CTOcast.*
+^cognicast.*
 ^hanselminutes.*
 ^devzen.*
 ^functionalgeekery.*

@@ -35,8 +35,10 @@
         rename-list (map #(-> {:old (str dir "/" (:name %)), :new (format "%s/%03d_%s" dir %2 (:name %))}) sorted-elements (range))
     ]
     (do 
+      (println "XXXX " map-pattern-index-to-files) 
       (println "Files beyond templates:" (:no-pattern map-pattern-index-to-files))
-      (println (map #(.renameTo (clojure.java.io/file (:old %)) (clojure.java.io/file (:new %))) rename-list)))))
+      (println (map #(.renameTo (clojure.java.io/file (:old %)) (clojure.java.io/file (:new %))) rename-list))
+      )))
   
 (defn get-pattern-list []
   (-> "./podcasts"
